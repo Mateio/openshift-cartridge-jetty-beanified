@@ -1,6 +1,8 @@
-# OpenShift Cartridge for Jetty WebSocket 
+# THIS CARTRIDGE IS A WORK IN PROGRESS. USE AT YOUR OWN PERIL. MIGHT EVOLVE DAILY OVER THE NEXT FEW WEEKS
 
-Create an app with a downloaded cartridge: http://cartreflect-claytondev.rhcloud.com/github/Worldline/openshift-cartridge-jetty-websocket
+# OpenShift Cartridge for a "Beanified" Jetty app server
+
+Create an app with a downloaded cartridge: http://cartreflect-claytondev.rhcloud.com/github/Mateio/openshift-cartridge-jetty-beanified
 
 The cartridge will run :
 * `mvn install -Popenshift -DskipTests=true` to build your application
@@ -10,9 +12,9 @@ Logs are written in `$OPENSHIFT_JETTY_DIR/logs/jetty.log`
 
 A `pom.xml` with `maven-jetty-plugin` is expected at the root of your repo. If your project is more complex, feel free to fork and adapt `bin/control` to your needs.
 
-There is an [example application](https://github.com/AtosWorldline/openshift-cartridge-jetty-websocket/tree/master/template), that may help you to understand your to configure your project to make it works on openshift.
+~~There is an [example application](https://github.com/Mateio/openshift-cartridge-jetty-beanified/tree/master/template), that may help you to understand your to configure your project to make it works on openshift.~~
 
-In your pom.xml, create an [openshift profile](https://github.com/AtosWorldline/openshift-cartridge-jetty-websocket/blob/master/template/pom.xml#L11) where you define jetty.port and jetty.host variable:
+In your pom.xml, create an [openshift profile](https://github.com/Mateio/openshift-cartridge-jetty-beanified/blob/master/template/pom.xml#L11) where you define jetty.port and jetty.host variable:
 
     <profiles>
       <profile>
@@ -34,7 +36,7 @@ In your pom.xml, create an [openshift profile](https://github.com/AtosWorldline/
       </profile>
     </profiles>
 
-Then create a [connector in the `jetty-maven-plugin` configuration](https://github.com/Worldline/openshift-cartridge-jetty-websocket/blob/master/template/pom.xml#L41), to configure the `port` and the `host`
+Then create a [connector in the `jetty-maven-plugin` configuration](https://github.com/Mateio/openshift-cartridge-jetty-beanified/blob/master/template/pom.xml#L41), to configure the `port` and the `host`
 
     <plugin>
       <!-- This plugin is needed for the servlet example -->
@@ -59,7 +61,7 @@ Then create a [connector in the `jetty-maven-plugin` configuration](https://gith
 
 Use 8000 port or 8443 for wss ! Web traffic works on the 80 and 443 port on OpenShift but WebSocket only works on the 8000 and 8443 port.
 
-So you will have to adapt your client like this ([JavaScript example](https://github.com/Worldline/openshift-cartridge-jetty-websocket/blob/master/template/src/main/webapp/index.jsp#L44)): 
+So you will have to adapt your client like this ([JavaScript example](https://github.com/Mateio/openshift-cartridge-jetty-beanified/blob/master/template/src/main/webapp/index.jsp#L44)): 
 
     var openshiftWebSocketPort = 8000; // Or use 8443 for wss
     var wsUri = "ws://" + window.location.hostname + ":" + openshiftWebSocketPort + "/ws";
