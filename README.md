@@ -1,6 +1,8 @@
 # THIS CARTRIDGE IS A WORK IN PROGRESS. USE AT YOUR OWN PERIL. MIGHT EVOLVE DAILY OVER THE NEXT FEW WEEKS
 
-# OpenShift Cartridge for a "Beanified" Jetty app server
+# OpenShift Cartridge for a "beanified" Jetty app server
+
+_Forked and adapted from https://github.com/worldline/openshift-cartridge-jetty-websocket_
 
 Create an app with a downloaded cartridge: http://cartreflect-claytondev.rhcloud.com/github/Mateio/openshift-cartridge-jetty-beanified
 
